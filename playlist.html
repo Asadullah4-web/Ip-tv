@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3U Playlist Creator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: background-color 0.3s ease;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            background: linear-gradient(45deg, #ff416c, #007bff);
+            -webkit-background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+            animation: slideIn 1s ease-out;
+        }
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        input:hover, input:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
+            outline: none;
+        }
+        .button {
+            padding: 10px 15px;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.8);
+        }
+        .reset-button {
+            background: linear-gradient(45deg, #ff416c, #d32f2f);
+        }
+        .reset-button:hover {
+            background: linear-gradient(45deg, #d32f2f, #ff416c);
+        }
+        .channel-list {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            max-height: 300px;
+            overflow-y: auto;
+            transition: max-height 0.5s ease;
+        }
+        .channel-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            cursor: grab;
+            opacity: 0;
+            animation: fadeIn 0.6s forwards;
+            transition: transform 0.3s ease-in-out;
+        }
+        .channel-item:hover {
+            box-shadow: 0 5px 15px rgba(0, 123, 255, 0.4);
+            transform: scale(1.03);
+        }
+        .channel-item.dragging {
+            opacity: 0.5;
+            border: 2px dashed #007bff;
+            transform: scale(1.05);
+        }
+        .remove-button, .edit-button {
+            background: linear-gradient(45deg, #f44336, #d32f2f);
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .edit-button {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+        }
+        .edit-button:hover, .remove-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.5);
+        }
+        .playlist-preview {
+            white-space: pre-wrap;
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>M3U Playlist Creator</h1>
+        <div class="input-group">
+            <input type="text" id="groupName" placeholder="Group Name">
+            <input type="text" id="channelLogoUrl" placeholder="Channel Logo URL">
+            <input type="text" id="channelName" placeholder="Channel Name">
+            <input type="text" id="channelUrl" placeholder="Channel URL">
+        </div>
+        <div class="input-group">
+            <button id="addChannel" class="button">Add Channel</button>
+            <button id="downloadPlaylist" class="button">Download Playlist</button>
+            <button id="clearAll" class="button reset-button">Clear All</button>
+        </div>
+        <div class="channel-list" id="channelList"></div>
+        <h3>Live M3U Preview:</h3>
+        <div class="playlist-preview" id="playlistPreview">#EXTM3U</div>
+    </div>
+
+    <script>
+        const channelList = document.getElementById('channelList');
+        const playlistPreview = document.getElementById('playlistPreview');
+        const addChannelButton = document.getElementById('addChannel');
+        const downloadPlaylistButton = document.getElementById('downloadPlaylist');
+        const clearAllButton = document.getElementById('clearAll');
+
+        let channels = [];
+
+        const updatePreview = () => {
+            let preview = '#EXTM3U\n';
+            channels.forEach(channel => {
+                preview += `#EXTINF:-1,${channel.name}\n#EXTGRP:${channel.group}\n${channel.url}\n`;
+            });
+            playlistPreview.textContent = preview;
+        };
+
+        const renderChannels = () => {
+            channelList.innerHTML = '';
+            channels.forEach((channel, index) => {
+                const channelItem = document.createElement('div');
+                channelItem.className = 'channel-item';
+                channelItem.setAttribute('draggable', true);
+                channelItem.innerHTML = `
+                    <div>
+                        <strong>Group:</strong> ${channel.group} <br>
+                        <strong>Name:</strong> ${channel.name} <br>
+                        <strong>URL:</strong> ${channel.url}
+                    </div>
+                    <button class="edit-button">Edit</button>
+                    <button class="remove-button">Remove</button>
+                `;
+
+                channelItem.querySelector('.remove-button').addEventListener('click', () => {
+                    channels.splice(index, 1);
+                    renderChannels();
+                    updatePreview();
+                });
+
+                channelItem.querySelector('.edit-button').addEventListener('click', () => {
+                    document.getElementById('groupName').value = channel.group;
+                    document.getElementById('channelLogoUrl').value = channel.logo;
+                    document.getElementById('channelName').value = channel.name;
+                    document.getElementById('channelUrl').value = channel.url;
+                    channels.splice(index, 1);
+                    renderChannels();
+                    updatePreview();
+                });
+
+                channelItem.addEventListener('dragstart', () => {
+                    channelItem.classList.add('dragging');
+                });
+
+                channelItem.addEventListener('dragend', () => {
+                    channelItem.classList.remove('dragging');
+                });
+
+                channelList.appendChild(channelItem);
+            });
+        };
+
+        addChannelButton.addEventListener('click', () => {
+            const groupName = document.getElementById('groupName').value;
+            const name = document.getElementById('channelName').value;
+            const url = document.getElementById('channelUrl').value;
+
+            if (!groupName || !name || !url) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            channels.push({ group: groupName, name, url });
+            renderChannels();
+            updatePreview();
+
+            document.getElementById('groupName').value = '';
+            document.getElementById('channelLogoUrl').value = '';
+            document.getElementById('channelName').value = '';
+            document.getElementById('channelUrl').value = '';
+        });
+
+        downloadPlaylistButton.addEventListener('click', () => {
+            const blob = new Blob([playlistPreview.textContent], { type: 'text/plain' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'playlist.m3u';
+            link.click();
+        });
+
+        clearAllButton.addEventListener('click', () => {
+            if (confirm('Are you sure you want to clear all channels?')) {
+                channels = [];
+                renderChannels();
+                updatePreview();
+            }
+        });
+
+        renderChannels();
+        updatePreview();
+    </script>
+</body>
+</html>
