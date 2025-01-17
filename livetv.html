@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SHAKIL GLOBAL TV</title>
+  <title>SHAKIL GLOBAL</title>
   <meta name="description" content="ENJOY FREE LIVE IPTV">
   <meta name="keywords" content="Watch live sports streaming online, including football, basketball, baseball, hockey, and more.">
   <meta name="author" content="Mostak Vai">
@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.6.2/dist/plyr.css">
   <script src="https://cdn.jsdelivr.net/npm/plyr@3.6.12/dist/plyr.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@1.1.4/dist/hls.min.js"></script>
+
   <style>
     body {
       font-family: 'Poppins', sans-serif;
@@ -22,12 +23,24 @@
       color: #fff;
       margin: 0;
       padding: 0;
-      transition: all 0.3s;
+      transition: all 0.3s ease-in-out;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .light-theme {
       background-color: #f9f9f9;
       color: #000;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .navbar {
@@ -37,12 +50,14 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
     }
 
     .navbar h1 {
       color: #4CAF50;
       margin: 0;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
+      text-shadow: 0 0 10px #4CAF50;
     }
 
     .theme-toggle {
@@ -55,7 +70,8 @@
       border: none;
       padding: 5px 10px;
       border-radius: 5px;
-      transition: transform 0.3s, background 0.3s;
+      box-shadow: 0 0 15px rgba(76, 175, 80, 0.5);
+      transition: background 0.3s, transform 0.3s;
     }
 
     .theme-toggle:hover {
@@ -79,19 +95,30 @@
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
       max-height: 500px;
       overflow-y: auto;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(-10px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
     }
 
     .channel-list h2 {
       text-align: center;
       margin-bottom: 15px;
       color: #4CAF50;
-      animation: fadeIn 1s;
+      text-shadow: 0 0 10px #4CAF50;
     }
 
     .search-bar {
       margin-bottom: 15px;
       display: flex;
-      animation: slideIn 0.5s;
     }
 
     .search-bar input {
@@ -99,12 +126,12 @@
       padding: 5px;
       border: 1px solid #4CAF50;
       border-radius: 5px;
-      transition: box-shadow 0.3s, transform 0.3s;
+      outline: none;
+      transition: box-shadow 0.3s;
     }
 
     .search-bar input:focus {
       box-shadow: 0 0 10px #4CAF50;
-      transform: scale(1.05);
     }
 
     .search-bar button {
@@ -120,7 +147,7 @@
 
     .search-bar button:hover {
       background: #45a049;
-      transform: scale(1.1);
+      transform: scale(1.05);
     }
 
     .channel-list a {
@@ -132,13 +159,12 @@
       border-radius: 5px;
       text-decoration: none;
       color: #fff;
-      transition: transform 0.3s, background 0.3s;
-      animation: fadeIn 0.5s ease-in-out;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .channel-list a:hover {
       transform: scale(1.05);
-      background: #555;
+      box-shadow: 0 0 15px #4CAF50;
     }
 
     .channel-list a img {
@@ -146,6 +172,7 @@
       height: 50px;
       margin-right: 10px;
       border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     }
 
     .video-player {
@@ -154,7 +181,7 @@
       padding: 20px;
       border-radius: 15px;
       box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-      animation: fadeIn 1s;
+      animation: fadeIn 1s ease-in-out;
     }
 
     .video-player video {
@@ -163,49 +190,12 @@
       max-height: 500px;
       border-radius: 10px;
       border: 2px solid #4CAF50;
-      transition: box-shadow 0.3s;
+      box-shadow: 0 0 15px #4CAF50;
+      transition: transform 0.3s;
     }
 
-    .video-player video:focus {
-      box-shadow: 0 0 20px #4CAF50;
-    }
-
-    .playlist-wrapper {
-      margin-top: 15px;
-      text-align: center;
-    }
-
-    label {
-      font-size: 1rem;
-      color: #4CAF50;
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .animated-dropdown {
-      width: 100%;
-      max-width: 250px;
-      padding: 10px;
-      border: 1px solid #4CAF50;
-      border-radius: 10px;
-      background: linear-gradient(90deg, #333, #555);
-      color: #fff;
-      font-size: 1rem;
-      transition: background 0.3s ease, transform 0.3s;
-      box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
-      outline: none;
-      cursor: pointer;
-      animation: slideIn 0.7s;
-    }
-
-    .animated-dropdown:hover {
-      background: linear-gradient(90deg, #555, #4CAF50);
-      transform: scale(1.05);
-    }
-
-    .animated-dropdown:focus {
-      border-color: #45a049;
-      box-shadow: 0px 4px 8px rgba(72, 239, 123, 0.6);
+    .video-player video:hover {
+      transform: scale(1.02);
     }
 
     .footer {
@@ -213,26 +203,7 @@
       padding: 10px;
       background: #222;
       color: #ccc;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes slideIn {
-      from {
-        transform: translateY(-20px);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.5);
     }
 
     @media (max-width: 768px) {
@@ -245,8 +216,8 @@
 
 <body>
   <div class="navbar">
-    <h1>SHAKIL GLOBAL</h1>
-    <button class="theme-toggle" onclick="toggleTheme()">dark/light</button>
+    <h1>SHAKIL GLOBAL LIVE TV</h1>
+    <button class="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   </div>
 
   <div class="container">
@@ -256,10 +227,10 @@
         <input type="text" id="searchInput" placeholder="Search channels">
         <button onclick="searchChannels()">Find</button>
       </div>
-      <div class="playlist-wrapper">
-        <label for="playlistSelect">Select Playlist:</label>
-        <select id="playlistSelect" class="animated-dropdown" onchange="loadSelectedPlaylist()">
-          <option value="https://raw.githubusercontent.com/hdoktvltd/hd-live.tv/refs/heads/main/playlist.m3u">Playlist 1</option>
+      <div>
+        <label for="playlistSelect" style="font-weight: bold;">Select Playlist:</label>
+        <select id="playlistSelect" onchange="loadSelectedPlaylist()" style="transition: transform 0.3s, box-shadow 0.3s; padding: 5px; border: 2px solid #4CAF50; border-radius: 5px; background: #222; color: #fff;">
+         <option value="https://raw.githubusercontent.com/hdoktvltd/hd-live.tv/refs/heads/main/playlist.m3u">Playlist 1</option>
           <option value="https://raw.githubusercontent.com/hmripon66/Indian-Bangla-IPTV-by-Tech-edu-byte/main/Bangla%20IPTV%20by%20Tech%20Edu%20Byte.m3u8?utm_medium=social&utm_source=heylink.me">Playlist 2</option>
          
           
@@ -279,7 +250,7 @@
   </div>
 
   <div class="footer">
-    <p>© 2024 SHAKIL GLOBAL TV. All rights reserved.</p>
+    <p>© 2025 shakil global tv. All rights reserved.</p>
   </div>
 
   <script>
@@ -348,10 +319,29 @@
       displayChannels(filteredChannels);
     }
 
-    function loadSelectedPlaylist() {
+    async function loadSelectedPlaylist() {
       const playlistSelect = document.getElementById('playlistSelect');
       const selectedPlaylist = playlistSelect.value;
-      loadChannels(selectedPlaylist);
+
+      // Add animation effect
+      playlistSelect.style.transform = "scale(1.1)";
+      playlistSelect.style.boxShadow = "0 0 20px #4CAF50";
+
+      setTimeout(() => {
+        playlistSelect.style.transform = "scale(1)";
+        playlistSelect.style.boxShadow = "none";
+      }, 300);
+
+      // Load channels for the selected playlist
+      await loadChannels(selectedPlaylist);
+
+      // Highlight the selected playlist visually
+      [...playlistSelect.options].forEach(option => {
+        option.style.background = "#222"; // Reset all options
+        option.style.color = "#fff";
+      });
+      playlistSelect.options[playlistSelect.selectedIndex].style.background = "#4CAF50";
+      playlistSelect.options[playlistSelect.selectedIndex].style.color = "#fff";
     }
 
     function toggleTheme() {
@@ -370,4 +360,4 @@
   </script>
 </body>
 
-    </html>
+  </html>
