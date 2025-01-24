@@ -1,0 +1,149 @@
+﻿#EXTM3U
+#EXTINF:-1 group-title="All",http://cdn.phorious.stream/play/mpegts/1c114147020804191d1138045f0611111b421a4d1611431e0c0a1f4b1d160a175e070d111e520102131b41080d1704521d1f494002
+http://k3.usastreams.com/CableLatino/88stereo/playlist.m3u8
+#EXTINF:-1 group-title="All",88 Stereo (720p) [Not 24\/7]
+https://cageu.bozztv.com/ssh101/ssh101/opacanal38/playlist.m3u8
+#EXTINF:-1 group-title="All",¡OPA! (1080p)
+https://5fc584f3f19c9.streamlock.net/agrotendencia/videoagrotendencia_hls1/playlist.m3u8
+#EXTINF:-1 group-title="All",Agrotendencia TV (1080p)
+https://liveingesta118.cdnmedia.tv/trivision36live/smil:dvrlive.smil/playlist.m3u8?DVR=
+#EXTINF:-1 group-title="All",Anexión TV Canal 36 (1080p)
+http://inliveserver.com:1935/14510/14510/playlist.m3u8
+#EXTINF:-1 group-title="All",Antena Seis TV (720p) [Geo-blocked]
+https://59ef525c24caa.streamlock.net/canal1cr/canal1cr/playlist.m3u8
+#EXTINF:-1 group-title="All",Canal 1 (720p)
+https://video20.klm99.com:3993/live/canal1crlive.m3u8
+#EXTINF:-1 group-title="All",Canal 1 (720p)
+https://d2t46xrpai3it5.cloudfront.net/Canal2CR/1ccdc8545fd05b83e9c57826d0de1069.sdp/playlist.m3u8
+#EXTINF:-1 group-title="All",Canal 2 (576p) [Not 24\/7]
+https://cloudvideo.servers10.com:8081/8120/index.m3u8
+#EXTINF:-1 group-title="All",Canal 3 KMK TV (720p)
+https://d2t46xrpai3it5.cloudfront.net/Canal4CR/e78ef5ae92191a83ba896fbe4bfda83e.sdp/playlist.m3u8
+#EXTINF:-1 group-title="All",Canal 4 (720p) [Not 24\/7]
+https://d2t46xrpai3it5.cloudfront.net/Canal6CR/201cac55f42a87a46e2d27a75e0c7c84.sdp/playlist.m3u8
+#EXTINF:-1 group-title="All",Canal 6 (720p) [Not 24\/7]
+https://mdstrm.com/live-stream-playlist/5a7b1e63a8da282c34d65445.m3u8
+#EXTINF:-1 group-title="All",Canal 8 (720p) [Not 24\/7]
+http://201.201.149.86:8080/livestream/stream.m3u8
+#EXTINF:-1 group-title="All",Canal 9 (720p) [Geo-blocked]
+https://d2t46xrpai3it5.cloudfront.net/Repretel11/b3e2798525101c45f84a48573676853a.sdp/playlist.m3u8
+#EXTINF:-1 group-title="All",Canal 11 (720p) [Not 24\/7]
+http://tvn.obix.tv:1935/TVN/CH14.stream_720p/playlist.m3u8
+#EXTINF:-1 group-title="All",Canal 14 San Carlos (720p) [Not 24\/7]
+https://stmv.streamingvip.click/tvnosara2/tvnosara2/playlist.m3u8
+#EXTINF:-1 group-title="All",Canal 17 TV Nosara (720p)
+https://rpn3.bozztv.com/ssh101/ssh101/sinart/playlist.m3u8
+#EXTINF:-1 group-title="All",Caribe TV CR (720p)
+https://tvdatta.com:3384/live/cartagomedioslive.m3u8
+#EXTINF:-1 group-title="All",Cartago Medios TV (720p)
+http://tv.ticosmedia.com:1935/COLOSAL/COLOSAL/playlist.m3u8
+#EXTINF:-1 group-title="All",Colosal TV (720p) [Not 24\/7]
+https://s1.tvdatta.com:3156/live/jimeneztvlive.m3u8
+#EXTINF:-1 group-title="All",Comunicaciones Jiménez (720p) [Not 24\/7]
+https://panel2.streamingtv-mediacp.online:1936/rudcmzwtnh/rudcmzwtnh/playlist.m3u8
+#EXTINF:-1 group-title="All",Costa Rica Channel (720p)
+https://cloudvideo.servers10.com:8081/8030/index.m3u8
+#EXTINF:-1 group-title="All",Coto Brus TV (720p)
+https://3a310f6ec721e6b362fcd22772b57f36a2fe6bb2.tabeelcr.com:8080/cristovision31/iptv.m3u8
+#EXTINF:-1 group-title="All",Cristo Visión Canal 31 (720p)
+https://11554-1.b.cdn13.com/EnlaceTV/smil:enlace-hd.smil/playlist.m3u8
+#EXTINF:-1 group-title="All",Enlace (720p)
+https://11554-1.b.cdn13.com/EJTV/smil:ejtv-hd.smil/playlist.m3u8
+#EXTINF:-1 group-title="All",Enlace Juvenil (720p)
+https://627bb251f23c7.streamlock.net:444/ExtremaTV/ExtremaTV/playlist.m3u8
+#EXTINF:-1 group-title="All",Extrema TV (720p)
+https://59ef525c24caa.streamlock.net/garabitoTV/garabitotv/playlist.m3u8
+#EXTINF:-1 group-title="All",Garabito TV (720p)
+https://5cf4a2c2512a2.streamlock.net/8162/8162/master.m3u8
+#EXTINF:-1 group-title="All",Guatuso TV (720p)
+https://62fc643fbf1aa.streamlock.net/HBTV/HBTV/playlist.m3u8
+#EXTINF:-1 group-title="All",HBTV TicaVisión (1080p)
+https://rtmp.info/iqtv/envivo/playlist.m3u8
+#EXTINF:-1 group-title="All",IQ Channel (720p)
+http://k4.usastreams.com/limontv1/limontv1/playlist.m3u8
+#EXTINF:-1 group-title="All",Limón TV (1080p) [Not 24\/7]
+https://lstv.duckdns.org:449/hls/lstv.m3u8
+#EXTINF:-1 group-title="All",Los Santos TV (720p)
+https://streeming.protoscr.com:3858/live/streeminglive.m3u8
+#EXTINF:-1 group-title="All",Luz Naciente TV (720p)
+https://ssh101.bozztv.com/ssh101/masciclismo/playlist.m3u8
+#EXTINF:-1 group-title="All",Más Ciclismo TV (720p)
+https://vcp8.myplaytv.com:1936/masciclismo/masciclismo/playlist.m3u8
+#EXTINF:-1 group-title="All",Más Ciclismo TV (720p)
+https://250weu.bozztv.com/ssh101/ssh101/meganettv/playlist.m3u8
+#EXTINF:-1 group-title="All",Meganet TV (720p)
+https://vivo.solumedia.com:19360/metaversus/metaversus.m3u8
+#EXTINF:-1 group-title="All",MetaVersus CR (480p)
+https://cloudvideo.servers10.com:8081/8068/index.m3u8
+#EXTINF:-1 group-title="All",Multizonas TV (720p)
+https://59ef525c24caa.streamlock.net/nicoyatv/nicoyatv/playlist.m3u8
+#EXTINF:-1 group-title="All",Nicoya TV (720p) [Not 24\/7]
+https://videohd.live:19360/8076/8076.m3u8
+#EXTINF:-1 group-title="All",Norte Informativo TV (240p)
+https://video01.logicahost.com.br/oldieshits/oldieshits/playlist.m3u8
+#EXTINF:-1 group-title="All",Oldies Hits (360p)
+http://163.178.170.127:1935/quinceucr/quinceucr/playlist.m3u8
+#EXTINF:-1 group-title="All",Quince UCR (720p) [Not 24\/7]
+https://cloudvideo.servers10.com:8081/8256/index.m3u8
+#EXTINF:-1 group-title="All",Radio Puerto TV (720p)
+https://250weu.bozztv.com/ssh101/ssh101/tvretropalmares/playlist.m3u8
+#EXTINF:-1 group-title="All",Retro TV Palmarés (360p) [Not 24\/7]
+https://rpn3.bozztv.com/ssh101/ssh101/retroxtvhd/playlist.m3u8
+#EXTINF:-1 group-title="All",Retrox TV (720p)
+https://cloudvideo.servers10.com:19360/8212/8212.m3u8
+#EXTINF:-1 group-title="All",RTTV (720p) [Not 24\/7]
+https://rtmp.info/sanjosetv/envivo/playlist.m3u8
+#EXTINF:-1 group-title="All",San José TV (1080p)
+https://stmv.streamingvip.click/sanvitotv/sanvitotv/playlist.m3u8
+#EXTINF:-1 group-title="All",San Vito Televisión (720p)
+http://tiquiciatv.com:1935/stv/web/playlist.m3u8
+#EXTINF:-1 group-title="All",Sarapiqui TV (720p) [Not 24\/7]
+https://lstv.duckdns.org:449/hls/stv.m3u8
+#EXTINF:-1 group-title="All",Sarapiqui TV (720p) [Not 24\/7]
+https://59ef525c24caa.streamlock.net/vmtv/soyplancha/playlist.m3u8
+#EXTINF:-1 group-title="All",SOY Plancha TV (720p)
+https://cloudvideo.servers10.com:8081/8230/index.m3u8
+#EXTINF:-1 group-title="All",TDtv (720p)
+http://tv.teleunotv.cr:1935/TVUNO/TVUNO/playlist.m3u8
+#EXTINF:-1 group-title="All",Tele Uno (720p) [Not 24\/7]
+https://5d16127744872.streamlock.net/TVUNO/TVUNO/playlist.m3u8
+#EXTINF:-1 group-title="All",Tele Uno (720p) [Not 24\/7]
+https://59ef525c24caa.streamlock.net/telebrunca/telebrunca/playlist.m3u8
+#EXTINF:-1 group-title="All",TeleBrunca (720p) [Not 24\/7]
+https://s2.cwebtv.net:4433/telefides/telefides/playlist.m3u8
+#EXTINF:-1 group-title="All",Telefides (720p)
+https://video20.klm99.com:3558/hybrid/play.m3u8
+#EXTINF:-1 group-title="All",Telered (720p)
+https://59ef525c24caa.streamlock.net/ARBtv/ARBtv/playlist.m3u8
+#EXTINF:-1 group-title="All",Telesistema (480p) [Not 24\/7]
+https://s1.tvdatta.com:3582/live/telesurlive.m3u8
+#EXTINF:-1 group-title="All",TeleSUR Costa Rica (720p) [Not 24\/7]
+https://593b04c4c5670.streamlock.net/portalfoxmix/portalfoxmix/.m3u8
+#EXTINF:-1 group-title="All",Tica TV+ (288p)
+http://k6.usastreams.online/Tvcurre/Tvcurre/playlist.m3u8
+#EXTINF:-1 group-title="All",TV Curré (720p) [Not 24\/7]
+https://rtmp.info/tvsantacruz/envivo/playlist.m3u8
+#EXTINF:-1 group-title="All",TV Santa Cruz (720p) [Not 24\/7]
+http://tv.ticosmedia.com:1935/TVSUR/TVSUR/playlist.m3u8
+#EXTINF:-1 group-title="All",TV Sur Canal 9 (620p) [Not 24\/7]
+https://5bf8041cb3fed.streamlock.net/TVSURCANAL14/TVSURCANAL14/playlist.m3u8
+#EXTINF:-1 group-title="All",TV Sur Canal 14 (1080p)
+https://59ef525c24caa.streamlock.net/Tvpluscr/Tvpluscr/playlist.m3u8
+#EXTINF:-1 group-title="All",TV+ Canal 54 (480p)
+https://59ef525c24caa.streamlock.net/tvurbano/tvurbano/playlist.m3u8
+#EXTINF:-1 group-title="All",Urbano TV (720p)
+http://k4.usastreams.com/videotour/videotour/playlist.m3u8
+#EXTINF:-1 group-title="All",Video Tour Channel (480p) [Not 24\/7]
+https://59ef525c24caa.streamlock.net/vmtv/tvvintage/playlist.m3u8
+#EXTINF:-1 group-title="All",Vintage Music (720p)
+https://59ef525c24caa.streamlock.net/vmtv/vmlatino/playlist.m3u8
+#EXTINF:-1 group-title="All",VM Latino (720p) [Not 24\/7]
+https://cloudvideo.servers10.com:8081/8198/index.m3u8
+#EXTINF:-1 group-title="All",VoiceOver Radio TV (720p)
+https://stmv.streamingvip.click/xpressojovenradiotv/xpressojovenradiotv/playlist.m3u8
+#EXTINF:-1 group-title="All",Xpresso Joven Radio (720p)
+https://srv.panelcast.net/zonatv2023/zonatv2023/playlist.m3u8
+#EXTINF:-1 group-title="All",Zona Music TV (720p)
+https://videoserver.tmcreativos.com:19360/gesfnvpamn/gesfnvpamn.m3u8
+#EXTINF:-1 group-title="All",Zurquí TV (720p)
+
